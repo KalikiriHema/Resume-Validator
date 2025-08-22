@@ -1,1 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hybrid ATS Resume Checker</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- PDF.js for PDF parsing -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+  <!-- Mammoth.js for DOCX parsing -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.2/mammoth.browser.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Hybrid ATS Resume Checker</h1>
+
+    <!-- Resume Upload -->
+    <label for="resumeFile">Upload Resume (TXT, PDF, DOCX):</label>
+    <input type="file" id="resumeFile" accept=".txt,.pdf,.doc,.docx">
+
+    <!-- Job Description -->
+    <label for="jobDesc">Paste Job Description:</label>
+    <textarea id="jobDesc" placeholder="Paste job description here..."></textarea>
+
+    <button onclick="checkATS()">Check ATS Score</button>
+
+    <!-- Frontend Keyword Results -->
+    <div class="results">
+      <h2>Keyword Analysis (JS)</h2>
+      <p><b>ATS Score:</b> <span id="score"></span></p>
+      <p><b>Matched Keywords:</b> <span id="matched"></span></p>
+      <p><b>Missing Keywords:</b> <span id="missing"></span></p>
+    </div>
+
+    <!-- AI Analysis -->
+    <div class="ai-results">
+      <h2>AI Analysis</h2>
+      <pre id="aiResults"></pre>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
 
